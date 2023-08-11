@@ -1,0 +1,13 @@
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: black;
+    width: fit-content;
+    padding-right: 10%;
+    border: 3px solid white;
+}
+
+.buttonMenu {
+    color: white;
+}

@@ -1,0 +1,22 @@
+.button {
+    width: 10em;
+    background-image: linear-gradient(to bottom, black, #1f1d1d, black);
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 2vh;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+    
+.button:hover {
+    background-image: linear-gradient(to bottom, grey, black, grey);
+    /* color: white; */
+/* 
+    border: 1px solid white; */
+    /*
+    border-radius: 10px;
+    box-shadow: 0 0 0 0.5px white; */
+}

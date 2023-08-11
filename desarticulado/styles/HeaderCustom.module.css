@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    top: 0;
+    position: sticky;
+    z-index: 2;
+    background-color: black;
+    padding: 1.5em 0 1em 0;
+    /* border: 8px double #1f1d1d;
+    border-radius: 10px; */
+    background-image: radial-gradient(circle, #141111, black);
+}
+
+.navigationBar {
+    display: flex;
+    gap: 2rem;
+}

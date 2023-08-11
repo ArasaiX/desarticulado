@@ -1,0 +1,129 @@
+/* body a {
+    display: flex;
+} */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-basis: calc(33.33% - 20px); /* Adjust as needed */
+    padding-bottom: 2em;
+}
+
+.title {
+    color: white;
+    cursor: pointer;
+    -webkit-transition: background-color  2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+    transition: opacity 0.3s ease;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    font-size: 6vh;
+    white-space: wrap;
+    width: 10em;
+    height: 3em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.title:hover {
+    cursor: pointer;
+    text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+    color: black;
+    -webkit-transition: background-color  2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+}
+
+.text {
+    color: #9A1B1B;
+    font-size: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: white;
+    font-weight: bold;
+}
+
+.boxCard:hover .text {
+    color: black;
+    /* animation: rotateAnimation 1s forwards; */
+}
+
+/* .boxCard:not(:hover) .text {
+    animation: rotateBackAnimation 1s forwards;
+} */
+
+.boxCardFixed {
+    position: relative;
+    border: 3px solid white;
+    border-radius: 5px;
+    width: 20em;
+    height: 20em;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em 0;
+    text-align: center;
+    background-color: white;
+}
+
+.boxCard {
+    position: relative;
+    border: 3px solid white;
+    border-radius: 5px;
+    width: 20em;
+    height: 20em;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+    text-align: center;
+    transition: transform 2s ease-in-out;
+    background-color: black;
+}
+
+.boxCard:hover {
+    background-color: white;
+    color: white;
+    cursor: pointer;
+    -webkit-transition: background-color  1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+    animation: rotateAnimation 1s forwards;
+}
+
+@keyframes rotateAnimation {
+    from {
+    transform: scale(1);
+    background-image: none; /* Elimina la imagen de fondo en la posición inicial */
+    }
+    to {
+    transform: scale(1.2);
+    background-image: url("/path/to/image.jpg"); /* Establece la imagen de fondo en la posición final */
+    }
+}
+
+.boxCard:not(:hover) {
+    animation: rotateBackAnimation 1s forwards;
+}
+
+@keyframes rotateBackAnimation {
+    from {
+    transform: scale(1.2);
+    }
+    to {
+    transform: scale(1);
+    }
+}
