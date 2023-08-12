@@ -16,7 +16,7 @@ export default function BurgerMenu() {
     return (
         
         <div>
-            <button className={styles.buttonMenu} onClick={toggleMenu}>| | | | | |</button>
+            <button className={styles.buttonMenu} onClick={toggleMenu}></button>
             {isOpen && (
                 <div >
                     <HeaderCustom />

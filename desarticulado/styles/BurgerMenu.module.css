@@ -9,5 +9,15 @@
 }
 
 .buttonMenu {
-    color: white;
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 6vh;
+    height: 6vh;
+    margin-left: 2vh;
+    margin-top: 3vh;
+}
+
+.buttonMenu:hover {
+    background-color: white;
+    filter: blur(50%)
 }

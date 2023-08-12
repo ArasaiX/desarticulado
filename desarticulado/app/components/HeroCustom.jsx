@@ -3,7 +3,7 @@ import BurgerMenu from "./BurgerMenu"
 
 export function HeroCustom() {
     return (
-        <div>
+        <div className={styles.container}>
             <section className={styles.hero}>
                 <header id={styles.header}>
                     {/* <a id={styles.logo} href="#">X</a> */}
@@ -20,8 +20,7 @@ export function HeroCustom() {
                 <footer className={styles.heroFooter}>
                     <div className={styles.movingTextContainer}>
                         <span className={styles.movingText}>
-                            Aquí tengo que poner una frase de esas que dices: Joder, menuda puta buena frase esta eh
-                            O quizás algo en plan, anunciando algo... ¿sabes?
+                            Extásis de Placer y Dolor. Hiper Hedonismo como fuerza vital.
                             </span>
                     </div>
                     {/*
