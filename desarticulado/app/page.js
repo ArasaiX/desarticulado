@@ -21,6 +21,7 @@ export default function Home() {
     flexWrap: "wrap",
     justifyContent: "space-evenly",
     padding: "2em",
+    overflow: "hidden"
   }
 
   const secondContainer = {

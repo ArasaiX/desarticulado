@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    max-width: 100%;
 }
 
 .header {
@@ -37,7 +38,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 100vh;
+	max-width: 100%;
 	padding: 1em;
 	box-sizing: border-box;
 	color: white;
@@ -65,13 +66,11 @@
 
 .heroTitle {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    display: inline-block;
-    position: relative;
-    max-width: 16em;
 	margin: 0;
-	font-size: 12vh;
+	font-size: 10vw;
 	font-weight: bold;
 	line-height: .9;
+    padding-bottom: .5em;
 }
 
 .heroTitle:hover {

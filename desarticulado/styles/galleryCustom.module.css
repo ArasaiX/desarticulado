@@ -3,4 +3,5 @@
     flex-wrap: wrap;
     justify-content: space-around;
     border: solid 3px white;
+    max-width: 100%;
 }

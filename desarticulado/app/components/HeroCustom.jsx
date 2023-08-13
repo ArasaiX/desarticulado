@@ -12,8 +12,7 @@ export function HeroCustom() {
                         
                     <BurgerMenu />
                     </nav>
-                </header>
-                <header className={styles.heroHeader}>
+                
                     <h1 className={styles.heroTitle}>Desarticulado</h1>
                     <img src="/city.gif" alt="city night" className={styles.imageHeader}/>
                 </header>
