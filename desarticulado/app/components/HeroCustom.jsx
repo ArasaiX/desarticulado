@@ -8,8 +8,8 @@ export function HeroCustom() {
             <section className={styles.hero}>
                 <header id={styles.header}>
                     {/* <a id={styles.logo} href="#">X</a> */}
-                    <img src="/lagrimas.jpeg" id={styles.logo} />
-                    <NavBarMenu />
+                    {/* <img src="/lagrimas.jpeg" id={styles.logo} /> */}
+                    {/* <NavBarMenu /> */}
                 </header>
                 <header className={styles.heroHeader}>
                     <div>

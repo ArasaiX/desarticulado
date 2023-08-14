@@ -1,23 +1,91 @@
-.hamburger {
+.navBar {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    top: 0;
+    position: sticky;
+    z-index: 2;
     background-color: black;
-    color: black;
-    width: fit-content;
-    padding-right: 10%;
-    border: 3px solid white;
+    padding: 1.5em 0 1em 0;
+    /* border: 8px double #1f1d1d;
+    border-radius: 10px; */
+    background-image: radial-gradient(circle, #141111, black);
 }
 
-.buttonMenu {
-    border: 3px solid white;
-    border-radius: 20px;
-    width: 6vh;
-    height: 6vh;
-    margin-left: 2vh;
-    margin-top: 3vh;
+.navBarSecondary {
+    display: flex;
+    gap: 2rem;
+    padding-right: 2em;
 }
 
-.buttonMenu:hover {
+.buttonBar {
+    display: flex;
+    gap: 2rem;
+}
+
+#logo {
+    text-decoration: none;
+    color: white;
+    font-size: 5vh;
+    font-weight: bold;
+    width: 10vh;
+    border-radius: 10em;
+    filter: grayscale(100%);
+}
+
+.buttonMenu .buttonMenuOpen {
+   display: flex;
+   flex-direction: column;
+   width: 2.1em;
+   height: 3em;
+   background: transparent;
+   gap: .65rem;
+   margin: 15px 0 0 15px;
+   border: 0;
+}
+
+.buttonMenu .buttonMenuOpen > div {
     background-color: white;
-    filter: blur(50%)
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    transition: all .5s;
+    transform-origin: left;
 }
+
+.buttonMenuOpen  div:first-child {
+   transform: rotate(45deg);
+}
+
+.buttonMenuOpen  div:nth-child(2) {
+    opacity: 0;
+}
+
+.buttonMenuOpen  div:last-child {
+   transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 949px) {
+    .buttonMenu {
+        display: none;
+    }
+
+    .buttonBarOpen {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        color: black;
+        width: fit-content;
+        padding-right: 10%;
+        border: 3px solid white;
+    }
+}
+
+@media screen and (max-width: 949px) {
+    .buttonBar {
+        visibility: hidden;
+    }
+}
+
+
