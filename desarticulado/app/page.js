@@ -20,7 +20,6 @@ export default function Home() {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-evenly",
-    padding: "2em",
     overflow: "hidden"
   }
 
