@@ -25,6 +25,40 @@ export default function NavBarMenu({ alt, route, imageUrl }) {
     };
     }, []);
 
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const [isNavHidden, setIsNavHidden] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;     
+            console.log(window)       
+            console.log(`Last scroll are: ${lastScrollY} and the current scroll are: ${currentScrollY}`)
+            if (lastScrollY <= currentScrollY) {
+                // console.log("Scrolled down!");   
+                setIsNavHidden(true)
+            } else if (lastScrollY >= currentScrollY) {
+                // console.log("scroll up!")
+                setIsNavHidden(false)
+            } else {
+                setIsNavHidden(true)             
+            }
+            setLastScrollY(currentScrollY);
+        };
+      
+        window.addEventListener("scroll", handleScroll);
+      
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, [lastScrollY]);
+
+    // const memoizedCallback = useCallback(
+    //     () => {
+    //       // Código de la función
+    //     },
+    //     [/* Dependencias */]
+    //   );
+
     const menuItems = {
       random: "Random",
       escritura: "Escritura",
@@ -35,7 +69,7 @@ export default function NavBarMenu({ alt, route, imageUrl }) {
     };
     
     return (
-        <nav className={styles.navBar}>
+        <nav className={isNavHidden ? styles.navBarHidden : styles.navBar}>
             <nav className={styles.navBarSecondary}>
                 <img src="/logo.gif" id={styles.logo} />
                 <div className={isMenuOpen ? styles.buttonBarOpen : styles.buttonBar }>

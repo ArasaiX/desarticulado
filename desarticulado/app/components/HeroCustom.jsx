@@ -6,11 +6,7 @@ export function HeroCustom() {
     return (
         <div className={styles.container}>
             <section className={styles.hero}>
-                <header id={styles.header}>
-                    {/* <a id={styles.logo} href="#">X</a> */}
-                    {/* <img src="/lagrimas.jpeg" id={styles.logo} /> */}
-                    {/* <NavBarMenu /> */}
-                </header>
+
                 <header className={styles.heroHeader}>
                     <div>
                         <h1 className={styles.heroTitle}>Desarticulado</h1>

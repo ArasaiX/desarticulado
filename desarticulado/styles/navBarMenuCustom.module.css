@@ -1,11 +1,3 @@
-.navBarSecondary {
-    display: flex;
-    justify-content: center;
-    max-width: 100%;
-    align-items: center;
-    background-color: transparent;
-}
-
 .navBar {
     display: flex;
     flex-direction: column;
@@ -19,6 +11,20 @@
     background-color: black;
     background-image: radial-gradient(circle, #141111, black);
     padding: 3em 1em 1em 0;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.navBarSecondary {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+    background-color: transparent;
+}
+
+.navBarHidden {
+    opacity: 0;
 }
 
 .subtitleContainer {
