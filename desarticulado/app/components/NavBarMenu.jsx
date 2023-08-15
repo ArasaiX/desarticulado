@@ -4,9 +4,12 @@ import Link from "next/link";
 import styles from "../../styles/navBarMenuCustom.module.css"
 import { ButtonCustom } from "./ButtonCustom";
 
-export default function NavBarMenu({ alt, route, imageUrl }) {
+export default function NavBarMenu() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    let currentScrollY = window.scrollY;     
+
 
     const handleClick = () => {
         setIsMenuOpen(!isMenuOpen)
@@ -25,12 +28,12 @@ export default function NavBarMenu({ alt, route, imageUrl }) {
     };
     }, []);
 
-    const [lastScrollY, setLastScrollY] = useState(0);
+    const [lastScrollY, setLastScrollY] = useState(0); // se puede cambiar  0 por window.scrollY
     const [isNavHidden, setIsNavHidden] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            const currentScrollY = window.scrollY;     
+            currentScrollY = window.scrollY;     
             console.log(window)       
             console.log(`Last scroll are: ${lastScrollY} and the current scroll are: ${currentScrollY}`)
             if (lastScrollY <= currentScrollY) {
@@ -51,13 +54,6 @@ export default function NavBarMenu({ alt, route, imageUrl }) {
           window.removeEventListener("scroll", handleScroll);
         };
       }, [lastScrollY]);
-
-    // const memoizedCallback = useCallback(
-    //     () => {
-    //       // Código de la función
-    //     },
-    //     [/* Dependencias */]
-    //   );
 
     const menuItems = {
       random: "Random",
@@ -83,7 +79,8 @@ export default function NavBarMenu({ alt, route, imageUrl }) {
                     <div></div>
                 </button>
             </nav>
-            <div className={styles.subtitleContainer}>
+            <div className={currentScrollY != 0 ? styles.subtitleHidden : styles.subtitleContainer}>
+            {/* <div className={styles.subtitleContainer}> */}
                 <text>
                 Has llegado a este lugar... Como podrías haber llegado a cualquier otro.<br/> Puedes pasar, descansa si lo necesitas... 
 
