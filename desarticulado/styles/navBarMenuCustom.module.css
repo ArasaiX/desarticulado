@@ -1,36 +1,50 @@
+.navBarSecondary {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+    background-color: transparent;
+}
+
 .navBar {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 2rem;
+    padding-right: 2em;
+    max-width: 100%;
     align-items: center;
     top: 0;
     position: sticky;
     z-index: 2;
     background-color: black;
-    padding: 1.5em 0 1em 0;
-    /* border: 8px double #1f1d1d;
-    border-radius: 10px; */
     background-image: radial-gradient(circle, #141111, black);
+    padding: 3em 1em 1em 0;
 }
 
-.navBarSecondary {
+.subtitleContainer {
     display: flex;
-    gap: 2rem;
-    padding-right: 2em;
+    text-align: center;
+    color:  white;
+    background-color: transparent;
+    font-size: 2vw;
+    padding-top: 1em;
+
 }
 
 .buttonBar {
     display: flex;
+    gap: 2em;
 }
 
 #logo {
-    text-decoration: none;
-    color: white;
-    font-size: 5vh;
-    font-weight: bold;
-    width: 10vh;
-    border-radius: 10em;
+    max-width: 100%;
+    width: 4rem;
     filter: grayscale(100%);
+    position: absolute;
+    left: 0;
+    top: 2em;
+    margin-left: 10vw;
+    margin-top: .5vw;
 }
 
 .buttonMenu  {
@@ -90,20 +104,29 @@
         display: none;
     }
 
-    .buttonBarOpen {
+    .buttonBarOpen { /* Estilos responsive menu Hamburguesa*/
         display: flex;
         flex-direction: column;
-        background-color: black;
-        color: black;
-        width: fit-content;
-        padding-right: 10%;
-        border: 3px solid white;
+        justify-content: space-between;
+        
+
     }
 }
 
 @media screen and (max-width: 949px) {
     .buttonBar {
-        visibility: hidden;
+        display: none;
+    }
+    .buttonMenu {
+        position: absolute;
+        right: 0;
+        margin-right: 10vw;
+        padding-top: 1em;
+
+    }
+
+    .subtitleContainer {
+        padding-top: 2.5em;
     }
 }
 

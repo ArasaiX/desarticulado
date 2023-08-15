@@ -8,6 +8,7 @@
     padding: 2vh;
     font-weight: bold;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: default;
 }
     
 .button:hover {

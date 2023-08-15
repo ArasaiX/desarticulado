@@ -36,8 +36,8 @@ export default function NavBarMenu({ alt, route, imageUrl }) {
     
     return (
         <nav className={styles.navBar}>
-            {/* <img src="/lagrimas.jpeg" id={styles.logo} /> */}
             <nav className={styles.navBarSecondary}>
+                <img src="/logo.gif" id={styles.logo} />
                 <div className={isMenuOpen ? styles.buttonBarOpen : styles.buttonBar }>
                     {Object.entries(menuItems).map(([route, name], index) => (
                         <ButtonCustom key={index} name={name} route={route}/>
@@ -49,6 +49,12 @@ export default function NavBarMenu({ alt, route, imageUrl }) {
                     <div></div>
                 </button>
             </nav>
+            <div className={styles.subtitleContainer}>
+                <text>
+                Has llegado a este lugar... Como podrías haber llegado a cualquier otro.<br/> Puedes pasar, descansa si lo necesitas... 
+
+                </text>
+            </div>
         </nav>
     );
     }
