@@ -28,6 +28,7 @@ export default function Home() {
     flexDirection: "column"
   }
 
+
   return (
       <div style={container}>
         <HeroCustom />

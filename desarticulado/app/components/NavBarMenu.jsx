@@ -1,15 +1,15 @@
 'use client'
 import {useState, useEffect} from "react";
-import Link from "next/link";
 import styles from "../../styles/navBarMenuCustom.module.css"
 import { ButtonCustom } from "./ButtonCustom";
 
 export default function NavBarMenu() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0); // se puede cambiar  0 por window.scrollY
+    const [isNavHidden, setIsNavHidden] = useState(false);
 
     let currentScrollY = window.scrollY;     
-
 
     const handleClick = () => {
         setIsMenuOpen(!isMenuOpen)
@@ -28,14 +28,11 @@ export default function NavBarMenu() {
     };
     }, []);
 
-    const [lastScrollY, setLastScrollY] = useState(0); // se puede cambiar  0 por window.scrollY
-    const [isNavHidden, setIsNavHidden] = useState(false);
-
     useEffect(() => {
         const handleScroll = () => {
             currentScrollY = window.scrollY;     
-            console.log(window)       
-            console.log(`Last scroll are: ${lastScrollY} and the current scroll are: ${currentScrollY}`)
+            // console.log(window)       
+            // console.log(`Last scroll are: ${lastScrollY} and the current scroll are: ${currentScrollY}`)
             if (lastScrollY <= currentScrollY) {
                 // console.log("Scrolled down!");   
                 setIsNavHidden(true)
@@ -63,7 +60,47 @@ export default function NavBarMenu() {
       code: "Code",
       about: "Sobre mí"
     };
-    
+    async function test() {
+        try {
+            const response  = await fetch("https://api-eu-west-2.hygraph.com/v2/cljtttz1c12hv01uc8rnpf9wp/master", {
+                method: "POST",
+                headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${process.env.GRAPH_CMS_API_KEY}`
+                },
+                body: JSON.stringify({
+                    query: `
+                query getPosts {
+                    posts {
+                    edges {
+                        node {
+                        title
+                        excerpt
+                        slug
+                        date
+                        }
+                    }
+                    }
+                }
+                `,
+            }),
+            next: { revalidate: 10 },
+            }).then((res) => res.json());
+        
+        
+            
+          if (!response.ok) {
+            throw new Error(`Error al obtener los datos. Código de estado: ${response.status}`);
+          }
+          const data = await response.json();
+          // Do something with the data here
+          console.log(data);
+        } catch (error) {
+          console.error('Ocurrió un error:', error);
+        }
+      }
+
+    //   test()
     return (
         <nav className={isNavHidden ? styles.navBarHidden : styles.navBar}>
             <nav className={styles.navBarSecondary}>
@@ -80,11 +117,10 @@ export default function NavBarMenu() {
                 </button>
             </nav>
             <div className={currentScrollY != 0 ? styles.subtitleHidden : styles.subtitleContainer}>
-            {/* <div className={styles.subtitleContainer}> */}
-                <text>
+                <div>
                 Has llegado a este lugar... Como podrías haber llegado a cualquier otro.<br/> Puedes pasar, descansa si lo necesitas... 
 
-                </text>
+                </div>
             </div>
         </nav>
     );
