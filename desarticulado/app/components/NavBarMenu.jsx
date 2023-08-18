@@ -9,7 +9,7 @@ export default function NavBarMenu() {
     const [lastScrollY, setLastScrollY] = useState(0); // se puede cambiar  0 por window.scrollY
     const [isNavHidden, setIsNavHidden] = useState(false);
 
-    let currentScrollY = window.scrollY;     
+    // let currentScrollY = window.scrollY;     
 
     const handleClick = () => {
         setIsMenuOpen(!isMenuOpen)
